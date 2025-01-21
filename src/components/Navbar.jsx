@@ -123,16 +123,20 @@ const Navbar = () => {
         {/* Cart Icon */}
         <div className="navbar-cart-icon relative">
           <Link to="/cart">
-            <img src={assets.basket_icon} alt="Cart" className="w-8" />
+            <img src={assets.basket_icon} alt="Cart" className="w-8 sm:w-10" />
           </Link>
         </div>
 
         {/* Sign In Button */}
-        <Link to="/signin">
-          <button className="signbutton border border-red-500 rounded-full px-8 py-2 text-red-500 hover:bg-red-100 transition duration-300">
-            Sign In
-          </button>
-        </Link>
+       
+<Link to="/signin" className="w-full sm:w-auto">
+  <button className="signbutton border border-red-500 rounded-full px-4 py-2 text-sm sm:text-base text-red-500 hover:bg-red-100 transition duration-300 w-full sm:w-auto sm:min-w-[120px] sm:ml-0 ml-4 truncate">
+    Sign In
+  </button>
+</Link>
+
+
+
       </div>
 
       {/* Mobile Menu Overlay */}
