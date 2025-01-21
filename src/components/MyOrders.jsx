@@ -23,17 +23,17 @@ const MyOrders = () => {
     ]);
 
   return (
-    <div className='my-12 px-12 mx-20'>
+    <div className='my-12 px-4 sm:px-8 md:px-12 lg:px-20'>
         <h2 className='text-3xl font-semibold text-black mb-8'>My Orders</h2>
         <div className="space-y-6">
             {data.map((order, index) => {
                 return (
-                    <div key={index} className='flex items-center justify-between p-6 border border-gray-300 dark:border-orange-500 rounded-lg shadow-md'>
+                    <div key={index} className='flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 border border-gray-300 dark:border-orange-500 rounded-lg shadow-md'>
                         {/* Parcel Icon */}
-                        <img src={assets.parcel_icon} alt="Parcel" className="w-16 h-16" />
+                        <img src={assets.parcel_icon} alt="Parcel" className="w-16 h-16 mb-4 sm:mb-0 sm:w-16 sm:h-16" />
 
                         {/* Order Items */}
-                        <div className='flex-1'>
+                        <div className='flex-1 mb-4 sm:mb-0'>
                             <p className='text-lg text-black'>
                                 {order.items.map((item, idx) => (
                                     <span key={idx} className="mr-2">
@@ -45,17 +45,17 @@ const MyOrders = () => {
                         </div>
 
                         {/* Total Amount */}
-                        <div className='flex-1 text-lg font-bold text-black'>
+                        <div className='flex-1 text-lg font-bold text-black mb-4 sm:mb-0'>
                             {order.amount} ETB
                         </div>
 
                         {/* Items Count */}
-                        <div className='flex-1 text-lg text-black'>
+                        <div className='flex-1 text-lg text-black mb-4 sm:mb-0'>
                             Items: {order.items.length}
                         </div>
 
                         {/* Status */}
-                        <div className='flex-1 text-lg flex items-center text-black'>
+                        <div className='flex-1 text-lg flex items-center text-black mb-4 sm:mb-0'>
                             <span className={`text-${order.status === 'Delivered' ? 'green' : 'red'}-500`}>
                                 &#x25cf;
                             </span>
